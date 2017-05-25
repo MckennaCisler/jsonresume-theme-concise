@@ -1,19 +1,28 @@
 <!doctype html>
 <html>
 	<head>
-	
+
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, user-scalable=no, minimal-ui">
-	
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+
 	<title>{{#resume.basics}}{{name}}{{/resume.basics}}</title>
 
 	<style>
 	{{{css}}}
 	</style>
-	
+
 	</head>
 	<body>
-	
+
+	<div id="header-container">
+		<div id="header">
+			{{> header}}
+		</div>
+	</div>
+
 	<div id="resume">
 		{{> basics }}
 		{{> work }}
@@ -26,4 +35,8 @@
 		{{> interests }}
 		{{> references }}
 	</body>
+
+	<div id="footer">
+		<em>Generated using <a href="https://jsonresume.org/">JSON Resume</a></em>
+	</div>
 </html>
