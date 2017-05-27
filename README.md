@@ -37,7 +37,9 @@ resume serve
 
 You'll want to replace the default `resume.json` with your own.
 
-## Details on working with this theme.
+## Details on working with this theme
+
+
 
 ## License
 

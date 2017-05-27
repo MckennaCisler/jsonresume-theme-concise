@@ -8,6 +8,8 @@
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
 
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
 
 	<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
@@ -41,7 +43,7 @@ ul {
 	margin-bottom: 0;
 }
 section {
-	margin-bottom: 1em;
+	margin-bottom: 1rem;
 }
 blockquote {
 	margin: 0;
@@ -57,6 +59,8 @@ blockquote {
 	font-size:1.25rem;
 	font-family: "Lato", sans-serif;
 	text-transform: uppercase;
+
+	margin-top: 1em;
 }
 
 .item {
@@ -64,7 +68,15 @@ blockquote {
 }
 
 .section-container {
-	padding: 0.5em;
+	padding: 0.25em;
+	margin: 0.5em;
+	border-left-style: solid;
+	border-color: #aaa0;
+	border-width: 1px;
+}
+
+.section-container-hover {
+	border-color: #aaa;
 }
 
 .name {
@@ -90,7 +102,7 @@ blockquote {
 #resume {
 	margin: 0 auto;
 	max-width: 65%;
-	padding: 0.25rem;
+	/*padding: 0.25rem;*/
 }
 
 
@@ -106,20 +118,27 @@ blockquote {
 .contact {
 	float: left;
 	text-align: left;
+	margin: 0;
 }
 #location {
 	float: right;
 	text-align: right;
+	margin: 0;
 }
 
 #profiles,
 #skills {
 	overflow: hidden;
+	margin: 0.5rem 0;
 }
 #profiles .item,
 #skills .item {
 	float: left;
-	width: 50%;
+	margin: 0.25rem;
+}
+
+.keywords {
+	overflow: hidden;
 }
 
 #footer {
@@ -189,22 +208,24 @@ blockquote {
 					<p><em>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vel elementum ex, quis congue neque. Proin sagittis augue nisl, a commodo augue volutpat eget. Proin sit amet lorem at erat hendrerit blandit eget vulputate justo. Vivamus vitae pellentesque massa. Etiam ac scelerisque nisi, eu iaculis nulla. In congue vitae orci non egestas. Aliquam eu enim vitae velit pretium ultrices vel molestie erat. </em></p>
 				</div>
 				<section id="profiles">
-					<div class="item">
-							<strong class="network">
+					<span class="item">
+							<icon class="fa fa-linkedin"></icon>
+							<!-- <strong class="network">
 								LinkedIn
-							</strong>
-							<div class="username">
+							</strong> -->
+							<span class="username">
 								<a href="www.linkedin.com/in/mckenna-cisler">mckenna-cisler</a>
-							</div>
-					</div>
-					<div class="item">
-							<strong class="network">
+							</span>
+					</span>
+					<span class="item">
+							<icon class="fa fa-github"></icon>
+							<!-- <strong class="network">
 								GitHub
-							</strong>
-							<div class="username">
+							</strong> -->
+							<span class="username">
 								<a href="www.github.com/MckennaCisler">MckennaCisler</a>
-							</div>
-					</div>
+							</span>
+					</span>
 				</section>
 			</section>
 		<section id="work">
@@ -567,9 +588,11 @@ blockquote {
 		$(".full-section").hide();
 		$(".summary-section").show();
 
+
 		var otherSlidingDownTimeout = null;
 		$(".section-container").hover(function() {
-			$(this).css("opacity", HOVER_OPACITY);
+			// $(this).css("opacity", HOVER_OPACITY);
+			$(this).addClass("section-container-hover");
 
 			if (otherSlidingDownTimeout === null) {
 				let $fullSection = $(this).children(".full-section");
@@ -584,7 +607,8 @@ blockquote {
 				otherSlidingDownTimeout = null;
 			}
 		}, function() {
-				$(this).css("opacity", "1");
+				// $(this).css("opacity", "1");
+				$(this).removeClass("section-container-hover");
 
 				$(this).children(".full-section").slideUp("med");
 				window.clearTimeout(otherSlidingDownTimeout);
