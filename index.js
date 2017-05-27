@@ -18,6 +18,10 @@ Handlebars.registerHelper('cleanUrl', function(url) {
 	return newUrl;
 });
 
+Handlebars.registerHelper('lowercase', function(text) {
+	return text.toLowerCase();
+});
+
 function render(resume) {
 	var css = fs.readFileSync(__dirname + "/style.css", "utf-8");
 	var tpl = fs.readFileSync(__dirname + "/resume.hbs", "utf-8");

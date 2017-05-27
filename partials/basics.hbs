@@ -76,16 +76,17 @@
 		{{#if profiles.length}}
 		<section id="profiles">
 			{{#each profiles}}
-			<div class="item">
+			<span class="item">
 				{{#if username}}
 					{{#if network}}
-					<strong class="network">
+					<icon class="fa fa-{{lowercase network}}"></icon>
+					<!-- <strong class="network">
 						{{network}}
-					</strong>
+					</strong> -->
 					{{/if}}
-					<div class="username">
+					<span class="username">
 						<a href="{{url}}">{{username}}</a>
-					</div>
+					</span>
 				{{else}}
 					{{#if network}}
 					<strong class="network">
@@ -93,7 +94,7 @@
 					</strong>
 					{{/if}}
 				{{/if}}
-			</div>
+			</span>
 			{{/each}}
 		</section>
 		{{/if}}

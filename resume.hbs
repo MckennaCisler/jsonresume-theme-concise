@@ -8,6 +8,8 @@
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
 
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
 
 	<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
@@ -56,9 +58,11 @@
 		$(".full-section").hide();
 		$(".summary-section").show();
 
+
 		var otherSlidingDownTimeout = null;
 		$(".section-container").hover(function() {
-			$(this).css("opacity", HOVER_OPACITY);
+			// $(this).css("opacity", HOVER_OPACITY);
+			$(this).addClass("section-container-hover");
 
 			if (otherSlidingDownTimeout === null) {
 				let $fullSection = $(this).children(".full-section");
@@ -73,7 +77,8 @@
 				otherSlidingDownTimeout = null;
 			}
 		}, function() {
-				$(this).css("opacity", "1");
+				// $(this).css("opacity", "1");
+				$(this).removeClass("section-container-hover");
 
 				$(this).children(".full-section").slideUp("med");
 				window.clearTimeout(otherSlidingDownTimeout);
