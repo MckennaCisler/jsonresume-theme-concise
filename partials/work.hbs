@@ -1,51 +1,40 @@
 {{#if resume.work.length}}
 <section id="work">
-	<h2>Work</h2>
+	<p class="cross-heading">Work</p>
 	{{#each resume.work}}
-	<div class="item">
-		{{#if company}}
-		<h3 class="name">
-			{{company}}
-		</h3>
-		{{/if}}
-		<div class="date">
-			{{#if startDate}}
-			<span class="startDate">
-				{{startDate}}
-			</span>
+	<div class="item section-container">
+		<div class="summary-section">
+			{{#if company}}
+			<h3 class="name">
+				{{company}}
+			</h3>
 			{{/if}}
-			{{#if endDate}}
-			<span class="endDate">
-				- {{endDate}}
-			</span>
-			{{else}}
-			<span class="endDate">
-				- Present
-			</span>
+			{{> date obj=this }}
+			{{#if position}}
+			<div class="position">
+				{{position}}
+			</div>
+			{{/if}}
+			{{#if website}}
+			<div class="website">
+				<a href="{{website}}">{{cleanUrl website}}</a>
+			</div>
 			{{/if}}
 		</div>
-		{{#if position}}
-		<div class="position">
-			{{position}}
+		<div class="full-section">
+			{{#if summary}}
+			<div class="summary">
+				<p><em>{{summary}}</em></p>
+			</div>
+			{{/if}}
+			{{#if highlights.length}}
+			<ul class="highlights">
+				{{#each highlights}}
+				<li>{{.}}</li>
+				{{/each}}
+			</ul>
+			{{/if}}
 		</div>
-		{{/if}}
-		{{#if website}}
-		<div class="website">
-			<a href="{{website}}">{{website}}</a>
-		</div>
-		{{/if}}
-		{{#if summary}}
-		<div class="summary">
-			<p>{{summary}}</p>
-		</div>
-		{{/if}}
-		{{#if highlights.length}}
-		<ul class="highlights">
-			{{#each highlights}}
-			<li>{{.}}</li>
-			{{/each}}
-		</ul>
-		{{/if}}
 	</div>
 	{{/each}}
 </section>

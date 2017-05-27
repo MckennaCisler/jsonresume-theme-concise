@@ -1,0 +1,60 @@
+{{#if resume.projects.length}}
+<section id="work">
+	<p class="cross-heading">Projects</p>
+	{{#each resume.projects}}
+	<div class="item section-container">
+		<div class="summary-section">
+			{{#if name}}
+			<h3 class="name">
+				{{name}}
+			</h3>
+			{{/if}}
+			{{#if type}}
+			<div class="type">
+				{{type}}
+			</div>
+			{{/if}}
+			{{#if description}}
+			<div class="description">
+				<p><em>{{description}}</em></p>
+			</div>
+			{{/if}}
+			{{#if url}}
+			<div class="url">
+				<a href="{{url}}">{{cleanUrl url}}</a>
+			</div>
+			{{/if}}
+			{{#if entity}}
+			<div class="entity">
+				{{entity}}
+			</div>
+			{{/if}}
+		</div>
+		<div class="full-section">
+			{{> date obj=this }}
+			{{#if roles.length}}
+			<ul class="roles">
+				{{#each roles}}
+				<li>{{.}}</li>
+				{{/each}}
+			</ul>
+			{{/if}}
+			{{#if highlights.length}}
+			<ul class="highlights">
+				{{#each highlights}}
+				<li>{{.}}</li>
+				{{/each}}
+			</ul>
+			{{/if}}
+			{{#if keywords.length}}
+			<ul class="keywords">
+				{{#each keywords}}
+				<li>{{.}}</li>
+				{{/each}}
+			</ul>
+			{{/if}}
+		</div>
+	</div>
+	{{/each}}
+</section>
+{{/if}}

@@ -1,17 +1,22 @@
 body {
 	background: #fafafa;
-	font: 15px "Open Sans", "Lato", sans-serif;
+	font: 15px "Open Sans", sans-serif;
 	line-height: 1.4;
 	position: relative;
 	margin: 0;
 	padding-bottom: 6rem;
 	min-height: 100%;
 }
+h1, h2, h3, h4, h5, h6 {
+	font-family: "Lato", sans-serif;
+}
+
 em {
 	color: #999;
 }
 p {
 	line-height: 1.4;
+	margin: 0em;
 }
 ul {
 	margin-bottom: 0;
@@ -23,9 +28,31 @@ blockquote {
 	margin: 0;
 	margin-bottom: 1em;
 }
+
+.cross-heading {
+	border-bottom-style: solid;
+	border-width: 1px;
+	border-color: #aaa;
+
+	width: 100%;
+	font-size:1.25rem;
+	font-family: "Lato", sans-serif;
+	text-transform: uppercase;
+}
+
 .item {
 	margin-bottom: 1em;
 }
+
+.section-container {
+	padding: 0.5em;
+}
+
+.name {
+	font-size: 1.3rem;
+}
+
+
 #header {
 	border-bottom-style: solid;
 	border-width: 1px;
@@ -46,6 +73,8 @@ blockquote {
 	max-width: 65%;
 	padding: 0.25rem;
 }
+
+
 #basics {
 	margin-bottom: -10px;
 }

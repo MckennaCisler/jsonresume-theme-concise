@@ -2,6 +2,22 @@ var fs = require("fs");
 var path = require('path');
 var Handlebars = require("handlebars");
 
+Handlebars.registerHelper('cleanUrl', function(url) {
+	let newUrl = url;
+
+	if (url.search("^http\:\/\/") != -1) {
+  	newUrl = url.slice(7);
+	} else if (url.search("^https\:\/\/") != -1) {
+		newUrl = url.slice(8);
+	}
+
+	if (newUrl.charAt(newUrl.length - 1) === "/") {
+		newUrl = newUrl.slice(0, newUrl.length - 1);
+	}
+
+	return newUrl;
+});
+
 function render(resume) {
 	var css = fs.readFileSync(__dirname + "/style.css", "utf-8");
 	var tpl = fs.readFileSync(__dirname + "/resume.hbs", "utf-8");

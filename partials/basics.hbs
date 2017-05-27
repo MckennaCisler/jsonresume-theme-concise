@@ -1,8 +1,8 @@
 {{#resume.basics}}
 	<section id="basics">
 		<div id="basics-header-container">
-			<div class="contact">
-				<div class="summary-section" hidden>
+			<div class="contact section-container">
+				<div class="summary-section">
 					{{#if email}}
 						<div class="email">
 							{{email}}
@@ -15,7 +15,7 @@
 						{{else}}
 							{{#if website}}
 								<div class="website">
-									{{website}}
+									{{cleanUrl website}}
 								</div>
 							{{/if}}
 						{{/if}}
@@ -27,11 +27,6 @@
 						{{website}}
 					</div>
 					{{/if}}
-					{{#if email}}
-					<div class="email">
-						{{email}}
-					</div>
-					{{/if}}
 					{{#if phone}}
 					<div class="phone">
 						{{phone}}
@@ -40,8 +35,8 @@
 				</div>
 			</div>
 			{{#location}}
-			<section id="location">
-				<div class="summary-section" hidden>
+			<section id="location" class="section-container">
+				<div class="summary-section">
 					{{#if countryCode}}
 					<div class="countryCode">
 						{{countryCode}}
@@ -67,16 +62,6 @@
 					{{#if city}}
 					<div class="city">
 						{{city}}
-					</div>
-					{{/if}}
-					{{#if countryCode}}
-					<div class="countryCode">
-						{{countryCode}}
-					</div>
-					{{/if}}
-					{{#if region}}
-					<div class="region">
-						{{region}}
 					</div>
 					{{/if}}
 				</div>

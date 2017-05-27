@@ -5,26 +5,37 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, user-scalable=no, minimal-ui">
 
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+
+	<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+
 
 	<title>Mckenna Cisler</title>
 
 	<style>
 	body {
 	background: #fafafa;
-	font: 15px "Open Sans", "Lato", sans-serif;
+	font: 15px "Open Sans", sans-serif;
 	line-height: 1.4;
 	position: relative;
 	margin: 0;
 	padding-bottom: 6rem;
 	min-height: 100%;
 }
+h1, h2, h3, h4, h5, h6 {
+	font-family: "Lato", sans-serif;
+}
+
 em {
 	color: #999;
 }
 p {
 	line-height: 1.4;
+	margin: 0em;
 }
 ul {
 	margin-bottom: 0;
@@ -36,9 +47,31 @@ blockquote {
 	margin: 0;
 	margin-bottom: 1em;
 }
+
+.cross-heading {
+	border-bottom-style: solid;
+	border-width: 1px;
+	border-color: #aaa;
+
+	width: 100%;
+	font-size:1.25rem;
+	font-family: "Lato", sans-serif;
+	text-transform: uppercase;
+}
+
 .item {
 	margin-bottom: 1em;
 }
+
+.section-container {
+	padding: 0.5em;
+}
+
+.name {
+	font-size: 1.3rem;
+}
+
+
 #header {
 	border-bottom-style: solid;
 	border-width: 1px;
@@ -59,6 +92,8 @@ blockquote {
 	max-width: 65%;
 	padding: 0.25rem;
 }
+
+
 #basics {
 	margin-bottom: -10px;
 }
@@ -108,11 +143,13 @@ blockquote {
 		</div>
 	</div>
 
+	<icon class="entypo-twitter"></icon>
+
 	<div id="resume">
 			<section id="basics">
 				<div id="basics-header-container">
-					<div class="contact">
-						<div class="summary-section" hidden>
+					<div class="contact section-container">
+						<div class="summary-section">
 								<div class="email">
 									mckennacisler@gmail.com
 								</div>
@@ -121,16 +158,13 @@ blockquote {
 							<div class="website">
 								http://mckennacisler.github.io
 							</div>
-							<div class="email">
-								mckennacisler@gmail.com
-							</div>
 							<div class="phone">
 								(603) 991-2470
 							</div>
 						</div>
 					</div>
-					<section id="location">
-						<div class="summary-section" hidden>
+					<section id="location" class="section-container">
+						<div class="summary-section">
 							<div class="countryCode">
 								New Hampshire
 									<span class="region">
@@ -147,12 +181,6 @@ blockquote {
 							</div>
 							<div class="city">
 								Sugar Hill
-							</div>
-							<div class="countryCode">
-								New Hampshire
-							</div>
-							<div class="region">
-								Northeast
 							</div>
 						</div>
 					</section>
@@ -180,167 +208,335 @@ blockquote {
 				</section>
 			</section>
 		<section id="work">
-			<h2>Work</h2>
-			<div class="item">
-				<h3 class="name">
-					Humanity-Centered Robotics Initiative
-				</h3>
-				<div class="date">
-					<span class="startDate">
-						2016-09-06
-					</span>
-					<span class="endDate">
-						- 2017-05-18
-					</span>
+			<p class="cross-heading">Work</p>
+			<div class="item section-container">
+				<div class="summary-section">
+					<h3 class="name">
+						Humanity-Centered Robotics Initiative
+					</h3>
+					<div class="date">
+					  <span class="startDate">
+					    2016-09-06
+					  </span>
+					  <span class="endDate">
+					    - 2017-05-18
+					  </span>
+					</div>
+					<div class="position">
+						Robotics Technician
+					</div>
+					<div class="website">
+						<a href="http://hcri.brown.edu">hcri.brown.edu</a>
+					</div>
 				</div>
-				<div class="position">
-					Robotics Technician
+				<div class="full-section">
+					<div class="summary">
+						<p><em>HCRI is an interdisciplinary coalition dedicated to researching and developing humanity-centered robotics. I worked as a technician on robots involved in research, development projects, and demonstrations. I also work on some pilot projects in humanity-centered robot design.</em></p>
+					</div>
+					<ul class="highlights">
+						<li>Worked on hardware interfacing and user interaction design for “Tablebot” – a novel mobile telepresence robot designed to resemble furniture</li>
+						<li>Co-developed node.js &amp; NodeMCU-based wireless trash can monitoring system for Brown University Facilities Department</li>
+						<li>Worked on Raspberry Pi and OpenCV-based dice-reading randomness generator</li>
+						<li>Setup various ROS-based robots, including the TurtleBot and MIT’s DuckieBot self-driving car</li>
+					</ul>
 				</div>
-				<div class="website">
-					<a href="http://hcri.brown.edu">http://hcri.brown.edu</a>
-				</div>
-				<div class="summary">
-					<p>HCRI is an interdisciplinary coalition dedicated to researching and developing humanity-centered robotics. I worked as a technician on robots involved in research, development projects, and demonstrations. I also work on some pilot projects in humanity-centered robot design.</p>
-				</div>
-				<ul class="highlights">
-					<li>Worked on hardware interfacing and user interaction design for “Tablebot” – a novel mobile telepresence robot designed to resemble furniture</li>
-					<li>Co-developed node.js &amp; NodeMCU-based wireless trash can monitoring system for Brown University Facilities Department</li>
-					<li>Worked on Raspberry Pi and OpenCV-based dice-reading randomness generator</li>
-					<li>Setup various ROS-based robots, including the TurtleBot and MIT’s DuckieBot self-driving car</li>
-				</ul>
 			</div>
-			<div class="item">
-				<h3 class="name">
-					White Mountain Science, Inc., Bethlehem, NH
-				</h3>
-				<div class="date">
-					<span class="startDate">
-						2015-01-02
-					</span>
-					<span class="endDate">
-						- 2017-09-06
-					</span>
+			<div class="item section-container">
+				<div class="summary-section">
+					<h3 class="name">
+						White Mountain Science, Inc.
+					</h3>
+					<div class="date">
+					  <span class="startDate">
+					    2015-01-02
+					  </span>
+					  <span class="endDate">
+					    - Present
+					  </span>
+					</div>
+					<div class="position">
+						Educational Resource Developer / Camp Instructor
+					</div>
+					<div class="website">
+						<a href="http://whitemountainscience.org">whitemountainscience.org</a>
+					</div>
 				</div>
-				<div class="position">
-					Educational Resource Developer / Camp Instructor
+				<div class="full-section">
+					<div class="summary">
+						<p><em>A company interested in promoting STEM learning through instructional camps and development of education resources. I worked as a developer of various educational tools and demos for use in our camps and to be sold to local teachers and schools, and also as an instructor for educational children&#x27;s camps.</em></p>
+					</div>
+					<ul class="highlights">
+						<li>Developed an ATtiny85-based “paper circuit” controller to be sold to educators, including documentation, manufacturing, and marketing materials</li>
+						<li>Developed, assembled and demoed educational tools and resources, including IoT devices, ScratchX extensions, wireless 3D printing tools, and a Raspberry Pi-based Sphero programming interface</li>
+						<li>Planned and ran weeklong STEAM workshops for 3rd – 9th graders</li>
+					</ul>
 				</div>
-				<div class="website">
-					<a href="http://whitemountainscience.org">http://whitemountainscience.org</a>
-				</div>
-				<div class="summary">
-					<p>A company interested in promoting STEM learning through instructional camps and development of education resources. I worked as a developer of various educational tools and demos for use in our camps and to be sold to local teachers and schools, and also as an instructor for educational children&#x27;s camps.</p>
-				</div>
-				<ul class="highlights">
-					<li>Developed an ATtiny85-based “paper circuit” controller to be sold to educators, including documentation, manufacturing, and marketing materials</li>
-					<li>Developed, assembled and demoed educational tools and resources, including IoT devices, ScratchX extensions, wireless 3D printing tools, and a Raspberry Pi-based Sphero programming interface</li>
-					<li>Planned and ran weeklong STEAM workshops for 3rd – 9th graders</li>
-				</ul>
 			</div>
-			<div class="item">
-				<h3 class="name">
-					Brown Space Engineering
-				</h3>
-				<div class="date">
-					<span class="startDate">
-						2016-09-06
-					</span>
-					<span class="endDate">
-						- 2020-05-27
-					</span>
+			<div class="item section-container">
+				<div class="summary-section">
+					<h3 class="name">
+						Brown Space Engineering
+					</h3>
+					<div class="date">
+					  <span class="startDate">
+					    2016-09-06
+					  </span>
+					  <span class="endDate">
+					    - Present
+					  </span>
+					</div>
+					<div class="position">
+						Flight Software Programmer
+					</div>
+					<div class="website">
+						<a href="http://brownspace.org/">brownspace.org</a>
+					</div>
 				</div>
-				<div class="position">
-					Flight Software Programmer
+				<div class="full-section">
+					<div class="summary">
+						<p><em>Brown Space Engineering is a club at Brown University dedicated to making space flight more accessible. It hopes to achieve this by launching a fully open-source CubeSet in Q2 2018 capable of being reproduced for ~$5000 in under a year. </em></p>
+					</div>
+					<ul class="highlights">
+						<li>Wrote RTOS tasks in C for multi-frequency data recording and transmission packaging</li>
+						<li>Co-designed data collection structures and transmission schema</li>
+						<li>Worked on boot sequence and satellite state handling systems</li>
+					</ul>
 				</div>
-				<div class="website">
-					<a href="http://brownspace.org/">http://brownspace.org/</a>
+			</div>
+		</section>
+		<section id="work">
+			<p class="cross-heading">Projects</p>
+			<div class="item section-container">
+				<div class="summary-section">
+					<h3 class="name">
+						Wikispeedia
+					</h3>
+					<div class="type">
+						application
+					</div>
+					<div class="description">
+						<p><em>Webapp frontend for Wikipedia Game</em></p>
+					</div>
+					<div class="url">
+						<a href="wikispeedia.herokuapp.com">wikispeedia.herokuapp.com</a>
+					</div>
 				</div>
-				<div class="summary">
-					<p>Brown Space Engineering is a club at Brown University dedicated to making space flight more accessible. It hopes to achieve this by launching a fully open-source CubeSet in Q2 2018 capable of being reproduced for ~$5000 in under a year. </p>
+				<div class="full-section">
+					<div class="date">
+					  <span class="startDate">
+					    2017-03-18
+					  </span>
+					  <span class="endDate">
+					    - 2017-05-12
+					  </span>
+					</div>
+					<ul class="highlights">
+						<li>Worked on websocket communication framework, Wikipedia crawling, and dynamic generation of page pairs</li>
+						<li>CSCI 0320 Term Project</li>
+					</ul>
+					<ul class="keywords">
+						<li>Java</li>
+						<li>Wikipedia</li>
+						<li>Javascript</li>
+					</ul>
 				</div>
-				<ul class="highlights">
-					<li>Wrote RTOS tasks in C for multi-frequency data recording and transmission packaging</li>
-					<li>Co-designed data collection structures and transmission schema</li>
-					<li>Worked on boot sequence and satellite state handling systems</li>
-				</ul>
+			</div>
+			<div class="item section-container">
+				<div class="summary-section">
+					<h3 class="name">
+						The Social Playlist
+					</h3>
+					<div class="type">
+						application
+					</div>
+					<div class="description">
+						<p><em>Music queue web app for crowd-sourced playlists</em></p>
+					</div>
+					<div class="url">
+						<a href="https://github.com/jkennan/The-Social-Playlist">github.com/jkennan/The-Social-Playlist</a>
+					</div>
+				</div>
+				<div class="full-section">
+					<div class="date">
+					  <span class="startDate">
+					    2017-01-04
+					  </span>
+					  <span class="endDate">
+					    - 2017-01-05
+					  </span>
+					</div>
+					<ul class="highlights">
+						<li>For Hack@Brown hackathon</li>
+					</ul>
+					<ul class="keywords">
+						<li>Meteor</li>
+						<li>Boostrap</li>
+						<li>YouTube API</li>
+					</ul>
+				</div>
+			</div>
+			<div class="item section-container">
+				<div class="summary-section">
+					<h3 class="name">
+						Hubway Maps
+					</h3>
+					<div class="type">
+						application
+					</div>
+					<div class="description">
+						<p><em>Visualization of socioeconomic data on Hubway stations in Cambridge, MA</em></p>
+					</div>
+					<div class="url">
+						<a href="https://mckennacisler.github.io/hubway-maps/public/">mckennacisler.github.io/hubway-maps/public</a>
+					</div>
+				</div>
+				<div class="full-section">
+					<div class="date">
+					  <span class="startDate">
+					    2017-03-04
+					  </span>
+					  <span class="endDate">
+					    - 2017-03-05
+					  </span>
+					</div>
+					<ul class="highlights">
+						<li>For Brown Datathon hackathon</li>
+					</ul>
+					<ul class="keywords">
+						<li>D3.js</li>
+						<li>node.js</li>
+					</ul>
+				</div>
+			</div>
+			<div class="item section-container">
+				<div class="summary-section">
+					<h3 class="name">
+						AlarmPi
+					</h3>
+					<div class="type">
+						application
+					</div>
+					<div class="description">
+						<p><em>Raspberry Pi-based alarm clock with configuration interface</em></p>
+					</div>
+					<div class="url">
+						<a href="https://github.com/MckennaCisler/AlarmPi">github.com/MckennaCisler/AlarmPi</a>
+					</div>
+				</div>
+				<div class="full-section">
+					<div class="date">
+					  <span class="startDate">
+					    2017-03-04
+					  </span>
+					  <span class="endDate">
+					    - 2017-03-05
+					  </span>
+					</div>
+					<ul class="highlights">
+						<li>3D printed case</li>
+						<li>Python Tornado backend to web interface for configuration</li>
+					</ul>
+					<ul class="keywords">
+						<li>Raspberry Pi</li>
+						<li>Python</li>
+						<li>Tornado</li>
+					</ul>
+				</div>
 			</div>
 		</section>
 		<section id="education">
-			<h2>Education</h2>
-			<div class="item">
-				<div class="date">
-					<span class="startDate">
-						2016-09-06
-					</span>
-					<span class="endDate">
-						- 2020-05-27
-					</span>
+			<p class="cross-heading">Education</p>
+			<div class="item section-container">
+				<div class="summary-section">
+					<div class="date">
+						<span class="startDate">
+							2016-09-06
+						</span>
+						<span class="endDate">
+							- 2020-05-27
+						</span>
+					</div>
+					<div class="institution">
+						Brown University
+					</div>
+					<div class="area">
+						Computer Science
+					</div>
 				</div>
-				<div class="institution">
-					Brown University
+				<div class="full-section">
+					<div class="studyType">
+						Bachelors
+					</div>
+					<ul class="courses">
+						<li>CSCI 0190 - Advanced Introduction to Computer Science</li>
+						<li>CSCI 0320 - Introduction to Software Engineering</li>
+						<li>CSCI 0220 - Introduction to Discrete Structures and Probability</li>
+					</ul>
 				</div>
-				<div class="area">
-					Computer Science
-				</div>
-				<div class="studyType">
-					Bachelor
-				</div>
-				<ul class="courses">
-					<li>CSCI 0190 - Advanced Introduction to Computer Science</li>
-					<li>CSCI 0320 - Introduction to Software Engineering</li>
-					<li>CSCI 0220 - Introduction to Discrete Structures and Probability</li>
-				</ul>
 			</div>
 		</section>
 		<section id="skills">
-			<h2>Skills</h2>
-			<div class="item">
-				<div class="name">
-					Software Development
+			<p class="cross-heading">Skills</p>
+			<div class="item section-container">
+				<div class="summary-section">
+					<div class="skill-name">
+						Software Development
+					</div>
+					<div class="level">
+						<em>Intermediate</em>
+					</div>
 				</div>
-				<div class="level">
-					<em>Intermediate</em>
-				</div>
-				<ul class="keywords">
-					<li>Java</li>
-					<li>Python</li>
-					<li>C</li>
-					<li>C++</li>
-					<li>Linux</li>
-				</ul>
+				<div class="full-section">
+					<ul class="keywords">
+						<li>Java</li>
+						<li>Python</li>
+						<li>C</li>
+						<li>C++</li>
+						<li>Linux</li>
+					</ul>
+					</div>
 			</div>
-			<div class="item">
-				<div class="name">
-					Web Development
+			<div class="item section-container">
+				<div class="summary-section">
+					<div class="skill-name">
+						Web Development
+					</div>
+					<div class="level">
+						<em>Intermediate</em>
+					</div>
 				</div>
-				<div class="level">
-					<em>Intermediate</em>
-				</div>
-				<ul class="keywords">
-					<li>HTML</li>
-					<li>Javascript</li>
-					<li>node.js</li>
-					<li>Python Tornado</li>
-					<li>Bootstrap</li>
-					<li>jQuery</li>
-				</ul>
+				<div class="full-section">
+					<ul class="keywords">
+						<li>HTML</li>
+						<li>Javascript</li>
+						<li>node.js</li>
+						<li>Python Tornado</li>
+						<li>Bootstrap</li>
+						<li>jQuery</li>
+					</ul>
+					</div>
 			</div>
-			<div class="item">
-				<div class="name">
-					CAD &amp; Rapid Prototyping
+			<div class="item section-container">
+				<div class="summary-section">
+					<div class="skill-name">
+						CAD &amp; Rapid Prototyping
+					</div>
+					<div class="level">
+						<em>Intermediate</em>
+					</div>
 				</div>
-				<div class="level">
-					<em>Intermediate</em>
-				</div>
-				<ul class="keywords">
-					<li>AutoDesk Inventor</li>
-					<li>OnShape</li>
-					<li>3D Printing</li>
-					<li>Laser Cutting</li>
-				</ul>
+				<div class="full-section">
+					<ul class="keywords">
+						<li>AutoDesk Inventor</li>
+						<li>OnShape</li>
+						<li>3D Printing</li>
+						<li>Laser Cutting</li>
+					</ul>
+					</div>
 			</div>
 		</section>
 		<section id="languages">
-			<h2>Languages</h2>
+			<p class="cross-heading">Languages</p>
 			<div class="item">
 				<div class="language">
 					English
@@ -363,4 +559,36 @@ blockquote {
 	<div id="footer">
 		<em>Generated using <a href="https://jsonresume.org/">JSON Resume</a></em>
 	</div>
+
+	<script>
+		var HOVER_ACTIVATE_TIME = 750;
+		var HOVER_OPACITY = 0.75;
+
+		$(".full-section").hide();
+		$(".summary-section").show();
+
+		var otherSlidingDownTimeout = null;
+		$(".section-container").hover(function() {
+			$(this).css("opacity", HOVER_OPACITY);
+
+			if (otherSlidingDownTimeout === null) {
+				let $fullSection = $(this).children(".full-section");
+				otherSlidingDownTimeout = window.setTimeout(function() {
+					$fullSection.slideDown("med", function() {
+						window.clearTimeout(otherSlidingDownTimeout);
+						otherSlidingDownTimeout = null;
+					});
+				}, HOVER_ACTIVATE_TIME);
+			} else {
+				window.clearTimeout(otherSlidingDownTimeout);
+				otherSlidingDownTimeout = null;
+			}
+		}, function() {
+				$(this).css("opacity", "1");
+
+				$(this).children(".full-section").slideUp("med");
+				window.clearTimeout(otherSlidingDownTimeout);
+				otherSlidingDownTimeout = null;
+		});
+	</script>
 </html>
