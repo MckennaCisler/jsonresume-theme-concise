@@ -5,8 +5,14 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, user-scalable=no, minimal-ui">
 
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+
+	<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+
 
 	<title>{{#resume.basics}}{{name}}{{/resume.basics}}</title>
 
@@ -23,10 +29,13 @@
 		</div>
 	</div>
 
+	<icon class="entypo-twitter"></icon>
+
 	<div id="resume">
 		{{> basics }}
 		{{> work }}
 		{{> volunteer }}
+		{{> projects }}
 		{{> education }}
 		{{> awards }}
 		{{> publications }}
@@ -39,4 +48,36 @@
 	<div id="footer">
 		<em>Generated using <a href="https://jsonresume.org/">JSON Resume</a></em>
 	</div>
+
+	<script>
+		var HOVER_ACTIVATE_TIME = 750;
+		var HOVER_OPACITY = 0.75;
+
+		$(".full-section").hide();
+		$(".summary-section").show();
+
+		var otherSlidingDownTimeout = null;
+		$(".section-container").hover(function() {
+			$(this).css("opacity", HOVER_OPACITY);
+
+			if (otherSlidingDownTimeout === null) {
+				let $fullSection = $(this).children(".full-section");
+				otherSlidingDownTimeout = window.setTimeout(function() {
+					$fullSection.slideDown("med", function() {
+						window.clearTimeout(otherSlidingDownTimeout);
+						otherSlidingDownTimeout = null;
+					});
+				}, HOVER_ACTIVATE_TIME);
+			} else {
+				window.clearTimeout(otherSlidingDownTimeout);
+				otherSlidingDownTimeout = null;
+			}
+		}, function() {
+				$(this).css("opacity", "1");
+
+				$(this).children(".full-section").slideUp("med");
+				window.clearTimeout(otherSlidingDownTimeout);
+				otherSlidingDownTimeout = null;
+		});
+	</script>
 </html>
