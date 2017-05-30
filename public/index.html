@@ -30,6 +30,7 @@
 }
 h1, h2, h3, h4, h5, h6 {
 	font-family: "Lato", sans-serif;
+	margin-bottom: 0.1rem;
 }
 
 em {
@@ -41,6 +42,7 @@ p {
 }
 ul {
 	margin-bottom: 0;
+	list-style-type: '— ';
 }
 section {
 	margin-bottom: 1rem;
@@ -88,7 +90,7 @@ blockquote {
 	border-bottom-style: solid;
 	border-width: 1px;
 	border-color: #aaa;
-	max-width: 70%;
+	max-width: 65%;
 	text-align: center;
 	margin: auto;
 	margin-bottom: 	0.75rem;
@@ -101,7 +103,7 @@ blockquote {
 }
 #resume {
 	margin: 0 auto;
-	max-width: 65%;
+	max-width: 60%;
 	/*padding: 0.25rem;*/
 }
 
@@ -144,7 +146,24 @@ blockquote {
 }
 
 .keywords {
-	overflow: hidden;
+	padding: 0.3rem;
+	margin: 0.25rem;
+}
+
+.keyword {
+	padding: 0.15rem 0.6rem;
+	margin: 0.2rem;
+
+	color: #aaa;
+	border-radius: 1rem;
+	border-style: solid;
+	border-width: 1px;
+	border-color: #aaa;
+}
+
+.reference {
+	font-style: italic;
+	font-size-adjust: 0.48;
 }
 
 #footer {
@@ -191,9 +210,9 @@ blockquote {
 					<section id="location" class="section-container">
 						<div class="summary-section">
 							<div class="countryCode">
-								New Hampshire
+								United States
 									<span class="region">
-										(Northeast)
+										(New Hampshire)
 									</span>
 							</div>
 						</div>
@@ -211,7 +230,7 @@ blockquote {
 					</section>
 				</div>
 				<div class="summary">
-					<p><em>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vel elementum ex, quis congue neque. Proin sagittis augue nisl, a commodo augue volutpat eget. Proin sit amet lorem at erat hendrerit blandit eget vulputate justo. Vivamus vitae pellentesque massa. Etiam ac scelerisque nisi, eu iaculis nulla. In congue vitae orci non egestas. Aliquam eu enim vitae velit pretium ultrices vel molestie erat. </em></p>
+					<p><em>I&#x27;m a second-year student who enjoys programming in all its forms. My interests are still developing but I&#x27;m very interested in large information systems, networking, and big data.</em></p>
 				</div>
 				<section id="profiles">
 					<span class="item">
@@ -241,21 +260,13 @@ blockquote {
 					<h3 class="name">
 						Humanity-Centered Robotics Initiative
 					</h3>
-					  <div class="date">
-					    <icon class="fa fa-calendar" aria-hidden="true"></icon>
-					    <strong>8 months</strong> <em>Started Sep 2016</em>
-					    <!-- 
-					    <span class="startDate">
-					      2016-09-06
-					    </span>
-					    <span class="endDate">
-					      - 2017-05-18
-					    </span>
-					 -->
-					  </div>
 					<div class="position">
 						Robotics Technician
 					</div>
+					  <div class="date">
+					    <icon class="fa fa-calendar" aria-hidden="true"></icon>
+					    <strong>8 months</strong> <em>Started Sep 2016</em>
+					  </div>
 					<div class="website">
 						<a href="http://hcri.brown.edu">hcri.brown.edu</a>
 					</div>
@@ -277,21 +288,13 @@ blockquote {
 					<h3 class="name">
 						White Mountain Science, Inc.
 					</h3>
-					  <div class="date">
-					    <icon class="fa fa-calendar" aria-hidden="true"></icon>
-					    <strong>2 years</strong> <em>Started Jan 2015</em>
-					    <!-- 
-					    <span class="startDate">
-					      2015-01-02
-					    </span>
-					    <span class="endDate">
-					      - Present
-					    </span>
-					     -->
-					  </div>
 					<div class="position">
 						Educational Resource Developer / Camp Instructor
 					</div>
+					  <div class="date">
+					    <icon class="fa fa-calendar" aria-hidden="true"></icon>
+					    <strong>2 years</strong> <em>Started Jan 2015</em>
+					  </div>
 					<div class="website">
 						<a href="http://whitemountainscience.org">whitemountainscience.org</a>
 					</div>
@@ -312,21 +315,13 @@ blockquote {
 					<h3 class="name">
 						Brown Space Engineering
 					</h3>
-					  <div class="date">
-					    <icon class="fa fa-calendar" aria-hidden="true"></icon>
-					    <strong>8 months</strong> <em>Started Sep 2016</em>
-					    <!-- 
-					    <span class="startDate">
-					      2016-09-06
-					    </span>
-					    <span class="endDate">
-					      - Present
-					    </span>
-					     -->
-					  </div>
 					<div class="position">
 						Flight Software Programmer
 					</div>
+					  <div class="date">
+					    <icon class="fa fa-calendar" aria-hidden="true"></icon>
+					    <strong>8 months</strong> <em>Started Sep 2016</em>
+					  </div>
 					<div class="website">
 						<a href="http://brownspace.org/">brownspace.org</a>
 					</div>
@@ -364,24 +359,16 @@ blockquote {
 					  <div class="date">
 					    <icon class="fa fa-calendar" aria-hidden="true"></icon>
 					    <strong>1 month</strong> <em>Started Mar 2017</em>
-					    <!-- 
-					    <span class="startDate">
-					      2017-03-18
-					    </span>
-					    <span class="endDate">
-					      - 2017-05-12
-					    </span>
-					 -->
 					  </div>
 					<ul class="highlights">
 						<li>Worked on websocket communication framework, Wikipedia crawling, and dynamic generation of page pairs</li>
 						<li>CSCI 0320 Term Project</li>
 					</ul>
-					<ul class="keywords">
-						<li>Java</li>
-						<li>Wikipedia</li>
-						<li>Javascript</li>
-					</ul>
+					  <div class="keywords">
+					      <span class="keyword">Java</span>
+					      <span class="keyword">Wikipedia</span>
+					      <span class="keyword">Javascript</span>
+					  </div>
 				</div>
 			</div>
 			<div class="item section-container">
@@ -403,23 +390,15 @@ blockquote {
 					  <div class="date">
 					    <icon class="fa fa-calendar" aria-hidden="true"></icon>
 					    <strong>1 day</strong> <em>Started Jan 2017</em>
-					    <!-- 
-					    <span class="startDate">
-					      2017-01-04
-					    </span>
-					    <span class="endDate">
-					      - 2017-01-05
-					    </span>
-					 -->
 					  </div>
 					<ul class="highlights">
 						<li>For Hack@Brown hackathon</li>
 					</ul>
-					<ul class="keywords">
-						<li>Meteor</li>
-						<li>Boostrap</li>
-						<li>YouTube API</li>
-					</ul>
+					  <div class="keywords">
+					      <span class="keyword">Meteor</span>
+					      <span class="keyword">Boostrap</span>
+					      <span class="keyword">YouTube API</span>
+					  </div>
 				</div>
 			</div>
 			<div class="item section-container">
@@ -441,22 +420,14 @@ blockquote {
 					  <div class="date">
 					    <icon class="fa fa-calendar" aria-hidden="true"></icon>
 					    <strong>1 day</strong> <em>Started Mar 2017</em>
-					    <!-- 
-					    <span class="startDate">
-					      2017-03-04
-					    </span>
-					    <span class="endDate">
-					      - 2017-03-05
-					    </span>
-					 -->
 					  </div>
 					<ul class="highlights">
 						<li>For Brown Datathon hackathon</li>
 					</ul>
-					<ul class="keywords">
-						<li>D3.js</li>
-						<li>node.js</li>
-					</ul>
+					  <div class="keywords">
+					      <span class="keyword">D3.js</span>
+					      <span class="keyword">node.js</span>
+					  </div>
 				</div>
 			</div>
 			<div class="item section-container">
@@ -478,24 +449,16 @@ blockquote {
 					  <div class="date">
 					    <icon class="fa fa-calendar" aria-hidden="true"></icon>
 					    <strong>1 month</strong> <em>Started Mar 2017</em>
-					    <!-- 
-					    <span class="startDate">
-					      2017-03-04
-					    </span>
-					    <span class="endDate">
-					      - 2017-04-05
-					    </span>
-					 -->
 					  </div>
 					<ul class="highlights">
 						<li>3D printed case</li>
 						<li>Python Tornado backend to web interface for configuration</li>
 					</ul>
-					<ul class="keywords">
-						<li>Raspberry Pi</li>
-						<li>Python</li>
-						<li>Tornado</li>
-					</ul>
+					  <div class="keywords">
+					      <span class="keyword">Raspberry Pi</span>
+					      <span class="keyword">Python</span>
+					      <span class="keyword">Tornado</span>
+					  </div>
 				</div>
 			</div>
 		</section>
@@ -509,15 +472,7 @@ blockquote {
 					</div>
 					  <div class="date">
 					    <icon class="fa fa-calendar" aria-hidden="true"></icon>
-					    <strong>3 years</strong> <em>Started Sep 2016</em>
-					    <!-- 
-					    <span class="startDate">
-					      2016-09-06
-					    </span>
-					    <span class="endDate">
-					      - 2020-05-27
-					    </span>
-					 -->
+					      Sep 05 2016 — May 26 2020
 					  </div>
 					<div class="area">
 						<span class="studyType">
@@ -549,14 +504,14 @@ blockquote {
 						<em>Intermediate</em>
 					</div>
 				</div>
-				<div class="full-section">
-					<ul class="keywords">
-						<li>Java</li>
-						<li>Python</li>
-						<li>C</li>
-						<li>C++</li>
-						<li>Linux</li>
-					</ul>
+					<div class="full-section">
+						  <div class="keywords">
+						      <span class="keyword">Java</span>
+						      <span class="keyword">Python</span>
+						      <span class="keyword">C</span>
+						      <span class="keyword">C++</span>
+						      <span class="keyword">Linux</span>
+						  </div>
 					</div>
 			</div>
 			<div class="item section-container">
@@ -568,15 +523,15 @@ blockquote {
 						<em>Intermediate</em>
 					</div>
 				</div>
-				<div class="full-section">
-					<ul class="keywords">
-						<li>HTML</li>
-						<li>Javascript</li>
-						<li>node.js</li>
-						<li>Python Tornado</li>
-						<li>Bootstrap</li>
-						<li>jQuery</li>
-					</ul>
+					<div class="full-section">
+						  <div class="keywords">
+						      <span class="keyword">HTML</span>
+						      <span class="keyword">Javascript</span>
+						      <span class="keyword">node.js</span>
+						      <span class="keyword">Python Tornado</span>
+						      <span class="keyword">Bootstrap</span>
+						      <span class="keyword">jQuery</span>
+						  </div>
 					</div>
 			</div>
 			<div class="item section-container">
@@ -588,13 +543,13 @@ blockquote {
 						<em>Intermediate</em>
 					</div>
 				</div>
-				<div class="full-section">
-					<ul class="keywords">
-						<li>AutoDesk Inventor</li>
-						<li>OnShape</li>
-						<li>3D Printing</li>
-						<li>Laser Cutting</li>
-					</ul>
+					<div class="full-section">
+						  <div class="keywords">
+						      <span class="keyword">AutoDesk Inventor</span>
+						      <span class="keyword">OnShape</span>
+						      <span class="keyword">3D Printing</span>
+						      <span class="keyword">Laser Cutting</span>
+						  </div>
 					</div>
 			</div>
 		</section>

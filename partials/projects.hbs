@@ -31,7 +31,7 @@
 		<div class="full-section">
 			<!-- For spacing  -->
 			<p></p>
-			{{> date obj=this }}
+			{{> dateRange obj=this }}
 			{{#if roles.length}}
 			<ul class="roles">
 				{{#each roles}}
@@ -46,13 +46,7 @@
 				{{/each}}
 			</ul>
 			{{/if}}
-			{{#if keywords.length}}
-			<ul class="keywords">
-				{{#each keywords}}
-				<li>{{.}}</li>
-				{{/each}}
-			</ul>
-			{{/if}}
+			{{> keywords}}
 		</div>
 	</div>
 	{{/each}}

@@ -10,7 +10,7 @@
 				{{institution}}
 			</div>
 			{{/if}}
-			{{> date obj=this }}
+			{{> simpleDateRange}}
 			{{#if area}}
 			<div class="area">
 				{{#if studyType}}
@@ -25,7 +25,7 @@
 		<div class="full-section">
 			{{#if gpa}}
 			<div class="gpa">
-				GPA: {{gpa}}
+				<strong>GPA</strong> {{gpa}}
 			</div>
 				{{/if}}
 				<div class="courses">

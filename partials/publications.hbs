@@ -2,32 +2,29 @@
 <section id="publications">
 	<p class="cross-heading">Publications</p class="cross-heading">
 	{{#each resume.publications}}
-	<div class="item">
-		{{#if name}}
-		<div class="name">
-			{{name}}
+	<div class="item section-container">
+			<div class="summary-section">
+			{{#if name}}
+				{{#if website}}
+					<a href="{{absoluteUrl website}}"><strong>{{name}}</strong></a>
+				{{else}}
+					<strong>{{name}}</strong>
+				{{/if}}
+			{{/if}}
+			{{> singleDate date=releaseDate}}
+			{{#if publisher}}
+				<div class="publisher">
+					{{publisher}}
+				</div>
+			{{/if}}
 		</div>
-		{{/if}}
-		{{#if publisher}}
-		<div class="publisher">
-			{{publisher}}
+		<div class="full-section">
+			{{#if summary}}
+			<div class="summary">
+				<p>{{summary}}</p>
+			</div>
+			{{/if}}
 		</div>
-		{{/if}}
-		{{#if releaseDate}}
-		<div class="releaseDate">
-			{{releaseDate}}
-		</div>
-		{{/if}}
-		{{#if website}}
-		<div class="website">
-			<a href="{{website}}">Link</a>
-		</div>
-		{{/if}}
-		{{#if summary}}
-		<div class="summary">
-			<p>{{summary}}</p>
-		</div>
-		{{/if}}
 	</div>
 	{{/each}}
 </section>
