@@ -16,12 +16,8 @@
 			{{/if}}
 		</div>
 		{{#if keywords.length}}
-		<div class="full-section">
-			<ul class="keywords">
-				{{#each keywords}}
-				<li>{{.}}</li>
-				{{/each}}
-			</ul>
+			<div class="full-section">
+				{{> keywords}}
 			</div>
 		{{/if}}
 	</div>

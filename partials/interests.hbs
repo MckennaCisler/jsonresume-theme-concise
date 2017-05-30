@@ -2,18 +2,18 @@
 <section id="interests">
 	<p class="cross-heading">Interests</p>
 	{{#each resume.interests}}
-	<div class="item">
-		{{#if name}}
-		<div class="name">
-			{{name}}
+	<div class="item section-container">
+		<div class="summary-section">
+			{{#if name}}
+			<div class="name">
+				{{name}}
+			</div>
+			{{/if}}
 		</div>
-		{{/if}}
 		{{#if keywords.length}}
-		<ul class="keywords">
-			{{#each keywords}}
-			<li>{{.}}</li>
-			{{/each}}
-		</ul>
+			<div class="full-section">
+				{{> keywords}}
+			</div>
 		{{/if}}
 	</div>
 	{{/each}}

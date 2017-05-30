@@ -1,0 +1,10 @@
+{{#if startDate}}
+  <div class="date">
+    <icon class="fa fa-calendar" aria-hidden="true"></icon>
+    {{#if endDate}}
+      {{niceDate startDate}} — {{niceDate endDate}}
+    {{else}}
+      {{niceDate startDate}} — Present
+    {{/if}}
+  </div>
+{{/if}}

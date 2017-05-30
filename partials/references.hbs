@@ -6,12 +6,14 @@
 		{{#if reference}}
 		<blockquote class="reference">
 			{{reference}}
+			{{#if name}}
+			<strong> — {{name}}</strong>
+			{{/if}}
 		</blockquote>
-		{{/if}}
-		{{#if name}}
-		<div class="name">
-			— {{name}}
-		</div>
+		{{else}}
+			{{#if name}}
+			<strong>{{name}}</strong>
+			{{/if}}
 		{{/if}}
 	</div>
 	{{/each}}

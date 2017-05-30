@@ -73,6 +73,12 @@ Handlebars.registerHelper('shortDate', function(date) {
 	return month + " " + dateObj.getFullYear();
 });
 
+Handlebars.registerHelper('niceDate', function(date) {
+	// ex. Mon May 12 2017
+	let dateInfo = new Date(date).toDateString().split(" ");
+	return `${dateInfo[1]} ${dateInfo[2]} ${dateInfo[3]}`;
+});
+
 function render(resume) {
 	var css = fs.readFileSync(__dirname + "/style.css", "utf-8");
 	var tpl = fs.readFileSync(__dirname + "/resume.hbs", "utf-8");

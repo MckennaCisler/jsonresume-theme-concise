@@ -9,12 +9,12 @@
 				{{company}}
 			</h3>
 			{{/if}}
-			{{> date obj=this }}
 			{{#if position}}
 			<div class="position">
 				{{position}}
 			</div>
 			{{/if}}
+			{{> dateRange obj=this }}
 			{{#if website}}
 			<div class="website">
 				<a href="{{absoluteUrl website}}">{{cleanUrl website}}</a>
