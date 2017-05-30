@@ -1,7 +1,7 @@
 {{#resume.basics}}
 	<section id="basics">
 		<div id="basics-header-container">
-			<div class="contact section-container">
+			<div id="contact" class="section-container">
 				<div class="summary-section">
 					{{#if email}}
 						<div class="email">
@@ -24,7 +24,7 @@
 				<div class="full-section">
 					{{#if website}}
 					<div class="website">
-						{{website}}
+						{{cleanUrl website}}
 					</div>
 					{{/if}}
 					{{#if phone}}
@@ -79,18 +79,18 @@
 			<span class="item">
 				{{#if username}}
 					{{#if network}}
-					<icon class="fa fa-{{lowercase network}}"></icon>
+					<icon title="{{network}}" class="fa fa-{{lowercase network}}" aria-hidden="true"></icon>
 					<!-- <strong class="network">
 						{{network}}
 					</strong> -->
 					{{/if}}
 					<span class="username">
-						<a href="{{url}}">{{username}}</a>
+						<a href="{{absoluteUrl url}}">{{username}}</a>
 					</span>
 				{{else}}
 					{{#if network}}
 					<strong class="network">
-						<a href="{{url}}">{{network}}</a>
+						<a href="{{absoluteUrl url}}">{{network}}</a>
 					</strong>
 					{{/if}}
 				{{/if}}

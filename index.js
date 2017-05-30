@@ -22,6 +22,26 @@ Handlebars.registerHelper('lowercase', function(text) {
 	return text.toLowerCase();
 });
 
+Handlebars.registerHelper('projectTypeIcon', function(type) {
+	switch (type.toLowerCase()) {
+		case "volunteering": return "fa-life-bouy"
+		case "presentation": return "fa-pie-chart"
+		case "talk": return "fa-signing"
+		case "application": return "fa-code"
+		case "conference": return "fa-building"
+	}
+});
+
+Handlebars.registerHelper('absoluteUrl', function(url) {
+	if (url.search("^http\:\/\/") != -1) {
+  	return url;
+	} else if (url.search("^https\:\/\/") != -1) {
+		return url;
+	} else {
+		return "http://" + url;
+	}
+});
+
 function render(resume) {
 	var css = fs.readFileSync(__dirname + "/style.css", "utf-8");
 	var tpl = fs.readFileSync(__dirname + "/resume.hbs", "utf-8");

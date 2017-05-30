@@ -6,13 +6,11 @@
 		<div class="summary-section">
 			{{#if name}}
 			<h3 class="name">
+				{{#if type}}
+					<icon title="{{type}}" class="project-icon fa {{projectTypeIcon type}}" aria-hidden="true"></icon>
+				{{/if}}
 				{{name}}
 			</h3>
-			{{/if}}
-			{{#if type}}
-			<div class="type">
-				{{type}}
-			</div>
 			{{/if}}
 			{{#if description}}
 			<div class="description">
@@ -21,7 +19,7 @@
 			{{/if}}
 			{{#if url}}
 			<div class="url">
-				<a href="{{url}}">{{cleanUrl url}}</a>
+				<a href="{{absoluteUrl url}}">{{cleanUrl url}}</a>
 			</div>
 			{{/if}}
 			{{#if entity}}
