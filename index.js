@@ -42,6 +42,37 @@ Handlebars.registerHelper('absoluteUrl', function(url) {
 	}
 });
 
+Handlebars.registerHelper('durationOf', function(date) {
+	// now if undefined
+	let endDate = new Date()
+	if (date.endDate != undefined) {
+		endDate = new Date(date.endDate);
+	}
+
+	// treat the MS difference as off the epoch and get deltas from that
+	const duration = new Date(endDate - new Date(date.startDate));
+	const yrs = duration.getFullYear() - 1970;
+
+	if (yrs <= 0) {
+		const months = duration.getMonth();
+
+		if (months <= 0) {
+			let days = duration.getDate()
+			return days + " day" + (days == 1 ? "" : "s");
+		} else {
+			return months + " month" + (months == 1 ? "" : "s");
+		}
+	} else {
+		return yrs + " year" + (yrs == 1 ? "" : "s");
+	}
+});
+
+Handlebars.registerHelper('shortDate', function(date) {
+	let dateObj = new Date(date);
+	let month = dateObj.toDateString().split(" ")[1];
+	return month + " " + dateObj.getFullYear();
+});
+
 function render(resume) {
 	var css = fs.readFileSync(__dirname + "/style.css", "utf-8");
 	var tpl = fs.readFileSync(__dirname + "/resume.hbs", "utf-8");
