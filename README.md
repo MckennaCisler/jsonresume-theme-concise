@@ -39,7 +39,11 @@ You'll want to replace the default `resume.json` with your own.
 
 ## Details on working with this theme
 
+#### Social icons for profiles
+Icons are automatically found for various profiles using the (lowercase) "network" field and Font Awesome's Brand Icons. If one of your profiles' icons doesn't show up, look for the correct icon / icon name [here](http://fontawesome.io/icons#brand) and change the network name to correspond to the correct icon.
+<!-- If there is not an available icon, the network name is simply shown. -->
 
+Icons are also automatically added for various project types. They are defined for 'volunteering', 'presentation', 'talk', 'application', and 'conference.' (This is in index.js; feel free to send a pull request to add more!)
 
 ## License
 

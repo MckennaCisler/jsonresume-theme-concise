@@ -60,16 +60,21 @@ blockquote {
 	font-family: "Lato", sans-serif;
 	text-transform: uppercase;
 
-	margin-top: 1em;
+	margin-top: 1.25em;
 }
 
 .item {
 	margin-bottom: 1em;
 }
 
+.name {
+	font-size: 1.3rem;
+}
+
 .section-container {
 	padding: 0.25em;
 	margin: 0.5em;
+	margin-bottom: 0.75em;
 	border-left-style: solid;
 	border-color: #aaa0;
 	border-width: 1px;
@@ -79,11 +84,6 @@ blockquote {
 	border-color: #aaa;
 }
 
-.name {
-	font-size: 1.3rem;
-}
-
-
 #header {
 	border-bottom-style: solid;
 	border-width: 1px;
@@ -91,8 +91,8 @@ blockquote {
 	max-width: 70%;
 	text-align: center;
 	margin: auto;
-	margin-bottom: 	0.75em;
-	margin-top: 		0.75em;
+	margin-bottom: 	0.75rem;
+	margin-top: 		0.75rem;
 	padding: 0.5em;
 }
 #header h1, #header h2, #header h3, #header h4 {
@@ -115,15 +115,17 @@ blockquote {
 #basics-header-container {
 	overflow:hidden;
 }
-.contact {
+#contact {
 	float: left;
 	text-align: left;
 	margin: 0;
+	margin-bottom: 0.25rem;
 }
 #location {
 	float: right;
 	text-align: right;
 	margin: 0;
+	margin-bottom: 0.25rem;
 }
 
 #profiles,
@@ -158,7 +160,7 @@ blockquote {
 	<div id="header-container">
 		<div id="header">
 			  <h1>Mckenna Cisler</h1>
-			  <h3>Programmer</h3>
+			  <h3>Computer Scientist</h3>
 		</div>
 	</div>
 
@@ -167,7 +169,7 @@ blockquote {
 	<div id="resume">
 			<section id="basics">
 				<div id="basics-header-container">
-					<div class="contact section-container">
+					<div id="contact" class="section-container">
 						<div class="summary-section">
 								<div class="email">
 									mckennacisler@gmail.com
@@ -175,7 +177,7 @@ blockquote {
 						</div>
 						<div class="full-section">
 							<div class="website">
-								http://mckennacisler.github.io
+								mckennacisler.github.io
 							</div>
 							<div class="phone">
 								(603) 991-2470
@@ -209,21 +211,21 @@ blockquote {
 				</div>
 				<section id="profiles">
 					<span class="item">
-							<icon class="fa fa-linkedin"></icon>
+							<icon title="LinkedIn" class="fa fa-linkedin" aria-hidden="true"></icon>
 							<!-- <strong class="network">
 								LinkedIn
 							</strong> -->
 							<span class="username">
-								<a href="www.linkedin.com/in/mckenna-cisler">mckenna-cisler</a>
+								<a href="http://www.linkedin.com/in/mckenna-cisler">mckenna-cisler</a>
 							</span>
 					</span>
 					<span class="item">
-							<icon class="fa fa-github"></icon>
+							<icon title="GitHub" class="fa fa-github" aria-hidden="true"></icon>
 							<!-- <strong class="network">
 								GitHub
 							</strong> -->
 							<span class="username">
-								<a href="www.github.com/MckennaCisler">MckennaCisler</a>
+								<a href="http://www.github.com/MckennaCisler">MckennaCisler</a>
 							</span>
 					</span>
 				</section>
@@ -330,16 +332,14 @@ blockquote {
 			<div class="item section-container">
 				<div class="summary-section">
 					<h3 class="name">
+							<icon title="application" class="project-icon fa fa-code" aria-hidden="true"></icon>
 						Wikispeedia
 					</h3>
-					<div class="type">
-						application
-					</div>
 					<div class="description">
 						<p><em>Webapp frontend for Wikipedia Game</em></p>
 					</div>
 					<div class="url">
-						<a href="wikispeedia.herokuapp.com">wikispeedia.herokuapp.com</a>
+						<a href="http://wikispeedia.herokuapp.com">wikispeedia.herokuapp.com</a>
 					</div>
 				</div>
 				<div class="full-section">
@@ -365,11 +365,9 @@ blockquote {
 			<div class="item section-container">
 				<div class="summary-section">
 					<h3 class="name">
+							<icon title="application" class="project-icon fa fa-code" aria-hidden="true"></icon>
 						The Social Playlist
 					</h3>
-					<div class="type">
-						application
-					</div>
 					<div class="description">
 						<p><em>Music queue web app for crowd-sourced playlists</em></p>
 					</div>
@@ -399,11 +397,9 @@ blockquote {
 			<div class="item section-container">
 				<div class="summary-section">
 					<h3 class="name">
+							<icon title="application" class="project-icon fa fa-code" aria-hidden="true"></icon>
 						Hubway Maps
 					</h3>
-					<div class="type">
-						application
-					</div>
 					<div class="description">
 						<p><em>Visualization of socioeconomic data on Hubway stations in Cambridge, MA</em></p>
 					</div>
@@ -432,11 +428,9 @@ blockquote {
 			<div class="item section-container">
 				<div class="summary-section">
 					<h3 class="name">
+							<icon title="application" class="project-icon fa fa-code" aria-hidden="true"></icon>
 						AlarmPi
 					</h3>
-					<div class="type">
-						application
-					</div>
 					<div class="description">
 						<p><em>Raspberry Pi-based alarm clock with configuration interface</em></p>
 					</div>
