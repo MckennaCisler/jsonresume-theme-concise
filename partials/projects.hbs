@@ -14,7 +14,7 @@
 			{{/if}}
 			{{#if description}}
 			<div class="description">
-				<p><em>{{description}}</em></p>
+				<em>{{description}}</em>
 			</div>
 			{{/if}}
 			{{#if url}}
@@ -29,6 +29,8 @@
 			{{/if}}
 		</div>
 		<div class="full-section">
+			<!-- For spacing  -->
+			<p></p>
 			{{> date obj=this }}
 			{{#if roles.length}}
 			<ul class="roles">

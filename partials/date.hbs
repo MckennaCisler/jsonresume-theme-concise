@@ -1,16 +1,20 @@
-<div class="date">
-  {{#if obj.startDate}}
-  <span class="startDate">
-    {{obj.startDate}}
-  </span>
-  {{/if}}
-  {{#if obj.endDate}}
-  <span class="endDate">
-    - {{obj.endDate}}
-  </span>
-  {{else}}
-  <span class="endDate">
-    - Present
-  </span>
-  {{/if}}
-</div>
+{{#if obj.startDate}}
+  <div class="date">
+    <icon class="fa fa-calendar" aria-hidden="true"></icon>
+    <strong>{{durationOf obj}}</strong> <em>Started {{shortDate obj.startDate}}</em>
+    <!-- {{#if obj.startDate}}
+    <span class="startDate">
+      {{obj.startDate}}
+    </span>
+    {{/if}}
+    {{#if obj.endDate}}
+    <span class="endDate">
+      - {{obj.endDate}}
+    </span>
+    {{else}}
+    <span class="endDate">
+      - Present
+    </span>
+    {{/if}} -->
+  </div>
+{{/if}}

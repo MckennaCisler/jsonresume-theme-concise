@@ -16,7 +16,7 @@ em {
 }
 p {
 	line-height: 1.4;
-	margin: 0em;
+	margin: 0.5rem 0;
 }
 ul {
 	margin-bottom: 0;
@@ -53,7 +53,7 @@ blockquote {
 .section-container {
 	padding: 0.25em;
 	margin: 0.5em;
-	margin-bottom: 0.75em;
+	margin-bottom: 1em;
 	border-left-style: solid;
 	border-color: #aaa0;
 	border-width: 1px;
@@ -94,6 +94,10 @@ blockquote {
 #basics-header-container {
 	overflow:hidden;
 }
+#basics .full-section {
+	margin: 0;
+}
+
 #contact {
 	float: left;
 	text-align: left;
