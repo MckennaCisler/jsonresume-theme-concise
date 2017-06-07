@@ -65,13 +65,17 @@ blockquote {
 	border-color: #aaa;
 }
 
+#header-container {
+	margin: 0 auto;
+	padding: 0;
+}
+
 #header {
 	border-bottom-style: solid;
 	border-width: 1px;
 	border-color: #aaa;
-	max-width: 65%;
 	text-align: center;
-	margin: auto;
+	margin: 0 auto;
 	margin-bottom: 	0.75rem;
 	margin-top: 		0.75rem;
 	padding: 0.5em;
@@ -82,10 +86,9 @@ blockquote {
 }
 #resume {
 	margin: 0 auto;
-	max-width: 60%;
+	/*max-width: 60%;*/
 	/*padding: 0.25rem;*/
 }
-
 
 #basics {
 	margin-bottom: -10px;
@@ -99,7 +102,9 @@ blockquote {
 #basics .full-section {
 	margin: 0;
 }
-
+#basics .summary {
+	text-align: center;
+}
 #contact {
 	float: left;
 	text-align: left;
@@ -111,8 +116,9 @@ blockquote {
 	text-align: right;
 	margin: 0;
 	margin-bottom: 0.25rem;
+	border-left-style: none;
+	border-right-style: solid;
 }
-
 #profiles,
 #skills {
 	overflow: hidden;
@@ -124,6 +130,10 @@ blockquote {
 	margin: 0.25rem;
 }
 
+#skills .item {
+	width: 33%;
+}
+
 .keywords {
 	padding: 0.3rem;
 	margin: 0.25rem;
@@ -132,6 +142,7 @@ blockquote {
 .keyword {
 	padding: 0.15rem 0.6rem;
 	margin: 0.2rem;
+	display: inline-block;
 
 	color: #aaa;
 	border-radius: 1rem;
@@ -152,4 +163,29 @@ blockquote {
 	bottom: 0;
 	left: 0;
 	padding: 1rem;
+	font-size: smaller;
+}
+
+@media only screen and (max-width: 750px) {
+	#contact {
+		width: 100%;
+		float: none;
+		text-align: center;
+		margin: 0;
+		margin-bottom: 0.25rem;
+	}
+
+	#location {
+		width: 100%;
+		float: none;
+		text-align: center;
+		margin: 0;
+		margin-bottom: 0.25rem;
+		border-left-style: solid;
+		border-right-style: none;
+	}
+
+	#skills .item {
+		width: 100%;
+	}
 }
