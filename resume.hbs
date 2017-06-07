@@ -25,43 +25,65 @@
 	</head>
 	<body>
 
-	<div id="header-container">
-		<div id="header">
-			{{> header}}
+	<div class=".container-fluid">
+		<div id="header-container" class="col-xs-10 col-md-9">
+			<div id="header">
+				{{> header}}
+			</div>
+		</div>
+
+		<div id="resume" class="col-xs-10 col-md-9">
+			{{> basics }}
+			{{> work }}
+			{{> volunteer }}
+			{{> projects }}
+			{{> education }}
+			{{> awards }}
+			{{> publications }}
+			{{> skills }}
+			{{> languages }}
+			{{> interests }}
+			{{> references }}
 		</div>
 	</div>
-
-	<icon class="entypo-twitter"></icon>
-
-	<div id="resume">
-		{{> basics }}
-		{{> work }}
-		{{> volunteer }}
-		{{> projects }}
-		{{> education }}
-		{{> awards }}
-		{{> publications }}
-		{{> skills }}
-		{{> languages }}
-		{{> interests }}
-		{{> references }}
-	</body>
 
 	<div id="footer">
 		<em>Generated using <a href="https://jsonresume.org/">JSON Resume</a></em>
 	</div>
+	</body>
 
 	<script>
 		var HOVER_ACTIVATE_TIME = 750;
-		var HOVER_OPACITY = 0.75;
+		var SHOW_FULL_SECTION = false;
 
-		$(".full-section").hide();
-		$(".summary-section").show();
+		if (!SHOW_FULL_SECTION) {
+			$(".full-section").hide();
+			$(".summary-section").show();
 
+			// desktop reveal method
+			$(".section-container").hover(function() {
+				revealSection.apply(this, [HOVER_ACTIVATE_TIME]);
+			}, hideSection);
+
+			// mobile reveal method
+			$(".section-container").on("blur", hideSection);
+			$(".section-container").on("click", function() {
+				// blur all those EXCEPT this one
+				var current = $(this);
+				$(".section-container").filter(function() {
+					return !$(this).is(current);
+				}).blur();
+
+				revealSection.apply(this, [0]);
+			});
+
+		} else {
+			$(".full-section").show();
+			$(".summary-section").show();
+		}
 
 		var otherSlidingDownTimeout = null;
-		$(".section-container").hover(function() {
-			// $(this).css("opacity", HOVER_OPACITY);
+		function revealSection(activateTimeout) {
 			$(this).addClass("section-container-hover");
 
 			if (otherSlidingDownTimeout === null) {
@@ -71,18 +93,19 @@
 						window.clearTimeout(otherSlidingDownTimeout);
 						otherSlidingDownTimeout = null;
 					});
-				}, HOVER_ACTIVATE_TIME);
+				}, activateTimeout);
 			} else {
 				window.clearTimeout(otherSlidingDownTimeout);
 				otherSlidingDownTimeout = null;
 			}
-		}, function() {
-				// $(this).css("opacity", "1");
-				$(this).removeClass("section-container-hover");
+		}
 
-				$(this).children(".full-section").slideUp("med");
-				window.clearTimeout(otherSlidingDownTimeout);
-				otherSlidingDownTimeout = null;
-		});
+		function hideSection() {
+			$(this).removeClass("section-container-hover");
+
+			$(this).children(".full-section").slideUp("med");
+			window.clearTimeout(otherSlidingDownTimeout);
+			otherSlidingDownTimeout = null;
+		}
 	</script>
 </html>
