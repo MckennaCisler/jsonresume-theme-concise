@@ -5,12 +5,12 @@ This is a theme for [JSON Resume](http://jsonresume.org/). It is designed to hid
 JSON Resume is a schema for encoding resume details in a JSON file. Themes like this one then parse that file and generate a nice HTML resume from it.
 
 ## Installation
-<!-- ### Using the theme server
+### Using the theme server
 The simplest way to use this theme is to simply call it up from JSON Resume's theme server:
 
 ```
 resume serve --theme concise
-``` -->
+```
 
 ### Install the command line
 
@@ -40,8 +40,7 @@ You'll want to replace the default `resume.json` with your own.
 ## Details on working with this theme
 
 #### Displaying all information by default; no hovering
-If you would like to display all information without the auto-hide function (i.e. for exporting a PDF), simply generate an HTML file and then change the JS variable `SHOW_FULL_SECTION` to `true` in the (only) script at the bottom of the generated file.
-<!-- using `resume export <file>.html --theme concise` -->
+If you would like to display all information without the auto-hide function (i.e. for exporting a PDF), simply generate an HTML file using `resume export <file>.html --theme concise` and then change the JS variable `SHOW_FULL_SECTION` to `true` in the (only) script at the bottom of the generated file.
 
 #### Social icons for profiles
 Icons are automatically found for various profiles using the (lowercase) "network" field and Font Awesome's Brand Icons. If one of your profiles' icons doesn't show up, look for the correct icon / icon name [here](http://fontawesome.io/icons#brand) and change the network name to correspond to the correct icon.
