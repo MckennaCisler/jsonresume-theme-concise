@@ -1,6 +1,6 @@
 # Concise JSON Resume theme
 <!-- [![](https://badge.fury.io/js/jsonresume-theme-concise.svg)](https://www.npmjs.org/package/jsonresume-theme-concise) -->
-This is a theme for [JSON Resume](http://jsonresume.org/). It is designed to hide detailed information until the user hovers over the summary. This ensures users can quickly get the gist of a resume but also have the details available to them.
+This is a theme for [JSON Resume](http://jsonresume.org). It is designed to hide detailed information until the user hovers over the summary. This ensures users can quickly get the gist of a resume but also have the details available to them.
 
 JSON Resume is a schema for encoding resume details in a JSON file. Themes like this one then parse that file and generate a nice HTML resume from it.
 
@@ -23,7 +23,7 @@ sudo npm install -g resume-cli
 ```
 
 ### Install dependencies
-```bash
+```
 sudo npm install
 ```
 
