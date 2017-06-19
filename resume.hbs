@@ -72,7 +72,11 @@
 						window.clearTimeout(otherSlidingDownTimeout);
 						otherSlidingDownTimeout = null;
 
-						$dropdownIndicator.text("\uf106"); // up arrow
+						// only CHANGE it from a down arrow
+						// (the whole action may have been cancelled and we don't want to re-add)
+						if ($dropdownIndicator.text() !== "") {
+							$dropdownIndicator.text("\uf106"); // up arrow
+						}
 					});
 
 				}, activateTimeout);
@@ -84,7 +88,7 @@
 
 		hideSection = function() {
 			$(this).removeClass("section-container-hover");
-			$(this).children(".summary-section-dropdown-indicator").text("");
+			$(this).children(".summary-section-dropdown-indicator").html("");
 
 			$(this).children(".full-section").slideUp("med");
 			window.clearTimeout(otherSlidingDownTimeout);

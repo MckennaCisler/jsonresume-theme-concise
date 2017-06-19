@@ -141,7 +141,7 @@ blockquote {
 #profiles .item,
 #skills .item {
 	float: left;
-	margin: 0.25rem;
+	margin: 0.5rem 0.25rem;
 }
 
 #skills .item {
