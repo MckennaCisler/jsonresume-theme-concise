@@ -56,6 +56,32 @@
 		var HOVER_ACTIVATE_TIME = 750;
 		var SHOW_FULL_SECTION = false;
 
+		var otherSlidingDownTimeout = null;
+		revealSection = function(activateTimeout) {
+			$(this).addClass("section-container-hover");
+
+			if (otherSlidingDownTimeout === null) {
+				var $fullSection = $(this).children(".full-section");
+				otherSlidingDownTimeout = window.setTimeout(function() {
+					$fullSection.slideDown("med", function() {
+						window.clearTimeout(otherSlidingDownTimeout);
+						otherSlidingDownTimeout = null;
+					});
+				}, activateTimeout);
+			} else {
+				window.clearTimeout(otherSlidingDownTimeout);
+				otherSlidingDownTimeout = null;
+			}
+		}
+
+		hideSection = function() {
+			$(this).removeClass("section-container-hover");
+
+			$(this).children(".full-section").slideUp("med");
+			window.clearTimeout(otherSlidingDownTimeout);
+			otherSlidingDownTimeout = null;
+		}
+
 		if (!SHOW_FULL_SECTION) {
 			$(".full-section").hide();
 			$(".summary-section").show();
@@ -82,30 +108,5 @@
 			$(".summary-section").show();
 		}
 
-		var otherSlidingDownTimeout = null;
-		function revealSection(activateTimeout) {
-			$(this).addClass("section-container-hover");
-
-			if (otherSlidingDownTimeout === null) {
-				let $fullSection = $(this).children(".full-section");
-				otherSlidingDownTimeout = window.setTimeout(function() {
-					$fullSection.slideDown("med", function() {
-						window.clearTimeout(otherSlidingDownTimeout);
-						otherSlidingDownTimeout = null;
-					});
-				}, activateTimeout);
-			} else {
-				window.clearTimeout(otherSlidingDownTimeout);
-				otherSlidingDownTimeout = null;
-			}
-		}
-
-		function hideSection() {
-			$(this).removeClass("section-container-hover");
-
-			$(this).children(".full-section").slideUp("med");
-			window.clearTimeout(otherSlidingDownTimeout);
-			otherSlidingDownTimeout = null;
-		}
 	</script>
 </html>
