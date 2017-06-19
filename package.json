@@ -1,6 +1,6 @@
 {
   "name": "jsonresume-theme-concise",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Custom 'concise' theme for JSON Resume",
   "author": "Mckenna Cisler",
   "repository": {
@@ -9,6 +9,7 @@
   },
   "license": "MIT",
   "dependencies": {
-    "handlebars": "^2.0.0-alpha.4"
+    "handlebars": "^2.0.0-alpha.4",
+    "normalize.css": "^7.0.0"
   }
 }

@@ -19,17 +19,17 @@ You'll need JSON Resume's official [resume-cli](https://github.com/jsonresume/re
 To install it:
 
 ```
-sudo npm install -g resume-cli
+npm install -g resume-cli
 ```
 
 ### Install dependencies
 ```
-sudo npm install
+npm install
 ```
 
 ### Serve theme
 
-Inside the root folder, run this to generate and serve the theme HTML using `resume.json`:
+Inside the root folder, run this to generate and serve the theme HTML using your `resume.json`:
 
 ```
 resume serve
@@ -47,7 +47,7 @@ Icons are automatically found for various profiles using the (lowercase) "networ
 <!-- If there is not an available icon, the network name is simply shown. -->
 
 #### Social icons for project types
-Icons are also automatically added for various project types. They are defined for 'volunteering', 'presentation', 'talk', 'application', and 'conference.' (This is in index.js; feel free to send a pull request to add more!)
+Icons are also automatically added for various project types. They are defined for 'volunteering', 'presentation', 'talk', 'application', and 'conference.' (This is in index.js; feel free to send an issue or even a pull request to add more!)
 
 ## License
 

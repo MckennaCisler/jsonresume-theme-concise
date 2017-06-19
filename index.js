@@ -82,6 +82,13 @@ Handlebars.registerHelper('niceDate', function(date) {
 });
 
 function render(resume) {
+	var normalizeCss = "";
+	try {
+		normalizeCss = fs.readFileSync(__dirname + "/node_modules/normalize.css/normalize.css", "utf-8");
+	} catch (err) {
+		console.log("WARNING: Normalize.css is not installed. Have you run 'npm install'?");
+	}
+
 	var css = fs.readFileSync(__dirname + "/style.css", "utf-8");
 	var tpl = fs.readFileSync(__dirname + "/resume.hbs", "utf-8");
 	var partialsDir = path.join(__dirname, 'partials');
@@ -99,6 +106,7 @@ function render(resume) {
 	  Handlebars.registerPartial(name, template);
 	});
 	return Handlebars.compile(tpl)({
+		normalizeCss: normalizeCss,
 		css: css,
 		resume: resume
 	});

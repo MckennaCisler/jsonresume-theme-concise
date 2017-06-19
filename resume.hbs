@@ -9,7 +9,6 @@
 	<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
 
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
 
 	<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
@@ -19,6 +18,7 @@
 	<title>{{#resume.basics}}{{name}}{{/resume.basics}}</title>
 
 	<style>
+	{{{normalizeCss}}}
 	{{{css}}}
 	</style>
 
@@ -26,13 +26,13 @@
 	<body>
 
 	<div class=".container-fluid">
-		<div id="header-container" class="col-xs-10 col-md-9">
+		<div id="header-container" class="col-xs-10 col-md-7">
 			<div id="header">
 				{{> header}}
 			</div>
 		</div>
 
-		<div id="resume" class="col-xs-10 col-md-9">
+		<div id="resume" class="col-xs-10 col-md-7">
 			{{> basics }}
 			{{> work }}
 			{{> volunteer }}
@@ -53,12 +53,17 @@
 	</body>
 
 	<script>
-		var HOVER_ACTIVATE_TIME = 750;
+		// set to true to remove all interactivity and just display all info
 		var SHOW_FULL_SECTION = false;
+
+		// how long a user must hover over a summary before it expands
+		var HOVER_ACTIVATE_TIME = 750; // ms
 
 		var otherSlidingDownTimeout = null;
 		revealSection = function(activateTimeout) {
 			$(this).addClass("section-container-hover");
+			var $dropdownIndicator = $(this).children(".summary-section-dropdown-indicator");
+			$dropdownIndicator.text("\uf107"); // down arrow
 
 			if (otherSlidingDownTimeout === null) {
 				var $fullSection = $(this).children(".full-section");
@@ -66,7 +71,10 @@
 					$fullSection.slideDown("med", function() {
 						window.clearTimeout(otherSlidingDownTimeout);
 						otherSlidingDownTimeout = null;
+
+						$dropdownIndicator.text("\uf106"); // up arrow
 					});
+
 				}, activateTimeout);
 			} else {
 				window.clearTimeout(otherSlidingDownTimeout);
@@ -76,6 +84,7 @@
 
 		hideSection = function() {
 			$(this).removeClass("section-container-hover");
+			$(this).children(".summary-section-dropdown-indicator").text("");
 
 			$(this).children(".full-section").slideUp("med");
 			window.clearTimeout(otherSlidingDownTimeout);
@@ -83,6 +92,9 @@
 		}
 
 		if (!SHOW_FULL_SECTION) {
+			$(".section-container").append(
+				"<span class='summary-section-dropdown-indicator'></span>");
+
 			$(".full-section").hide();
 			$(".summary-section").show();
 
