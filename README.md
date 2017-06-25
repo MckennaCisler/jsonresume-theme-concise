@@ -26,7 +26,7 @@ npm install -g resume-cli
 ```
 npm install
 ```
-This will install handlebars, which is needed for templating.
+This will install handlebars.js, which is needed for templating.
 
 ### Serve theme
 
@@ -39,6 +39,10 @@ resume serve
 You'll want to replace the default `resume.json` with your own.
 
 ## Details on working with this theme
+
+#### Modifying output through custom HTML
+This theme _does not_ HTML escape various inputs from resume.js, so you can add your own custom HTML to the fields in resume.js and they will modify the output. (the HTML used should be limited to [formatting tags](https://www.w3schools.com/html/html_formatting.asp)) or link tags to maintain styling).
+**Generally, dates, titles for objects with associated URLs, and designated URL fields _are_ escaped, i.e. _cannot_ be supplemented with HTML.**
 
 #### Displaying all information by default; no hovering
 If you would like to display all information without the auto-hide function (i.e. for exporting a PDF), simply generate an HTML file using `resume export <file>.html --theme concise` and then change the JS variable `SHOW_FULL_SECTION` to `true` in the (only) script at the bottom of the generated file.

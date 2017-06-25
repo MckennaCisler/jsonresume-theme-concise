@@ -5,7 +5,7 @@
 				<div class="summary-section">
 					{{#if email}}
 						<div class="email">
-							{{email}}
+							<a href="mailto:{{email}}">{{email}}</a>
 						</div>
 					{{else}}
 						{{#if phone}}
@@ -15,7 +15,7 @@
 						{{else}}
 							{{#if website}}
 								<div class="website">
-									{{cleanUrl website}}
+									<a href="{{website}}">{{cleanUrl website}}</a>
 								</div>
 							{{/if}}
 						{{/if}}
@@ -23,9 +23,9 @@
 				</div>
 				<div class="full-section">
 					{{#if website}}
-					<div class="website">
-						{{cleanUrl website}}
-					</div>
+						<div class="website">
+							<a href="{{website}}">{{cleanUrl website}}</a>
+						</div>
 					{{/if}}
 					{{#if phone}}
 					<div class="phone">
@@ -70,7 +70,7 @@
 		</div>
 		{{#if summary}}
 		<div class="summary">
-			<p><em>{{summary}}</em></p>
+			<p><em>{{{summary}}}</em></p>
 		</div>
 		{{/if}}
 		{{#if profiles.length}}

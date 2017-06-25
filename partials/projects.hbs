@@ -14,7 +14,7 @@
 			{{/if}}
 			{{#if description}}
 			<div class="description">
-				<em>{{description}}</em>
+				<em>{{{description}}}</em>
 			</div>
 			{{/if}}
 			{{#if url}}
@@ -24,7 +24,7 @@
 			{{/if}}
 			{{#if entity}}
 			<div class="entity">
-				{{entity}}
+				{{{entity}}}
 			</div>
 			{{/if}}
 		</div>
@@ -42,7 +42,7 @@
 			{{#if highlights.length}}
 			<ul class="highlights">
 				{{#each highlights}}
-				<li>{{.}}</li>
+				<li>{{{.}}}</li>
 				{{/each}}
 			</ul>
 			{{/if}}

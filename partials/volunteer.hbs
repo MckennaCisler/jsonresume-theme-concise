@@ -6,7 +6,7 @@
 		<div class="summary-section">
 			{{#if organization}}
 			<h3 class="name">
-				{{organization}}
+				{{{organization}}}
 			</h3>
 			{{/if}}
 			{{#if position}}
@@ -24,13 +24,13 @@
 		<div class="full-section">
 			{{#if summary}}
 			<div class="summary">
-				<p>{{summary}}</p>
+				<p>{{{summary}}}</p>
 			</div>
 			{{/if}}
 			{{#if highlights.length}}
 			<ul class="highlights">
 				{{#each highlights}}
-				<li>{{.}}</li>
+				<li>{{{.}}}</li>
 				{{/each}}
 			</ul>
 			{{/if}}
