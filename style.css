@@ -32,16 +32,31 @@ blockquote {
 }
 
 .cross-heading {
-	border-bottom-style: solid;
-	border-width: 1px;
-	border-color: #aaa;
-
 	width: 100%;
-	font-size:1.25rem;
+	margin-top: 1.25em;
+	text-align: center;
+}
+
+.cross-heading > p {
+	margin: 0;
+	font-size:1.4rem;
 	font-family: "Lato", sans-serif;
 	text-transform: uppercase;
+	display: inline-block;
 
-	margin-top: 1.25em;
+	background: #fafafa;
+	padding: 0 0.75em;
+}
+
+.cross-heading::after {
+	height: 1px;
+	content: "";
+	background: #aaa;
+	width: 100%;
+	display: block;
+	position: relative;
+	z-index: -100;
+	top: -1em;
 }
 
 .item {
