@@ -1,6 +1,4 @@
 Add a switch for concise vs. full mode
-Modify pixel width on css media query
 Add note on dates that displays whether job / project is ongoing / current.
 Add hover text or tooltip over date that gives specifics
 Emphasize position more than organization in companies
-Add down arrows to all fields

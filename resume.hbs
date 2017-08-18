@@ -3,7 +3,7 @@
 	<head>
 
 	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, user-scalable=no, minimal-ui">
+	<meta name="viewport" content="width=device-width, user-scalable=no, minimal-ui, initial-scale=1.0">
 
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
@@ -26,13 +26,13 @@
 	<body>
 
 	<div class=".container-fluid">
-		<div id="header-container" class="col-xs-10 col-md-7">
+		<div id="header-container" class="col-xs-10 col-lg-7">
 			<div id="header">
 				{{> header}}
 			</div>
 		</div>
 
-		<div id="resume" class="col-xs-10 col-md-7">
+		<div id="resume" class="col-xs-10 col-lg-7">
 			{{> basics }}
 			{{> work }}
 			{{> volunteer }}
@@ -88,7 +88,8 @@
 
 		hideSection = function() {
 			$(this).removeClass("section-container-hover");
-			$(this).children(".summary-section-dropdown-indicator").html("");
+			// instead of emptying, put in \uf107 if we want to always show indicators
+			$(this).children(".summary-section-dropdown-indicator").text("");
 
 			$(this).children(".full-section").slideUp("med");
 			window.clearTimeout(otherSlidingDownTimeout);
@@ -96,6 +97,14 @@
 		}
 
 		if (!SHOW_FULL_SECTION) {
+			// add a hinter to the dropdown function that disappears on first parent hover
+			$(".section-container").not(".no-hinter-section").first()
+				.append("<span class='summary-section-dropdown-hinter'>\uf107</span>")
+				.hover(() => {
+					$(".summary-section-dropdown-hinter").remove();
+				});
+
+			// instead of being empty, put in \uf107 if we want to always show indicators
 			$(".section-container").append(
 				"<span class='summary-section-dropdown-indicator'></span>");
 
