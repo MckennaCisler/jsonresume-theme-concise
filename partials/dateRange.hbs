@@ -1,6 +1,10 @@
 {{#if obj.startDate}}
-  <div class="date">
+  <div class="date" title="{{#if endDate}} {{niceDate obj.startDate}} — {{niceDate obj.endDate}} {{else}} {{niceDate obj.startDate}} — Present {{/if}}">
     <icon class="fa fa-calendar" aria-hidden="true"></icon>
-    <strong>{{durationOf obj}}</strong> <em>Started {{shortDate obj.startDate}}</em>
+    <strong>{{durationOf obj}}</strong>
+    {{#unless obj.endDate}}
+      <strong>(ongoing)</strong>
+    {{/unless}}
+    <em>Started {{shortDate obj.startDate}}</em>
   </div>
 {{/if}}

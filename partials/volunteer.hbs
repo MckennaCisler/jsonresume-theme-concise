@@ -4,15 +4,15 @@
 	{{#each resume.volunteer}}
 	<div class="item section-container">
 		<div class="summary-section">
-			{{#if organization}}
-			<h3 class="name">
-				{{{organization}}}
-			</h3>
-			{{/if}}
 			{{#if position}}
 			<div class="position">
 				{{position}}
 			</div>
+			{{/if}}
+			{{#if organization}}
+			<h3 class="name">
+				{{{organization}}}
+			</h3>
 			{{/if}}
 			{{> dateRange obj=this}}
 			{{#if website}}

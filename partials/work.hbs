@@ -4,15 +4,15 @@
 	{{#each resume.work}}
 	<div class="item section-container">
 		<div class="summary-section">
-			{{#if company}}
-			<h3 class="name">
-				{{company}}
-			</h3>
-			{{/if}}
 			{{#if position}}
 			<div class="position">
 				{{position}}
 			</div>
+			{{/if}}
+			{{#if company}}
+			<h3 class="name">
+				{{company}}
+			</h3>
 			{{/if}}
 			{{> dateRange obj=this }}
 			{{#if website}}

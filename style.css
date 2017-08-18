@@ -64,6 +64,10 @@ blockquote {
 }
 
 .name {
+	font-size: 1.1rem;
+}
+
+.position, .title {
 	font-size: 1.3rem;
 }
 
