@@ -114,10 +114,20 @@ blockquote {
 	width: 0;
 	height: 0;
 
-	animation-name: bounce;
-	animation-duration: 1.3s;
-	animation-iteration-count: infinite;
-	animation-timing-function: ease-in-out;
+	animation: bounce 1.3s infinite;
+	/*animation-timing-function: ease-in-out;*/
+}
+
+.concise-full-switch {
+	text-align: center;
+	font-size: 0.7rem;
+
+	margin: 0;
+	margin-top: 0.3rem;
+}
+
+.concise-full-switch a {
+	padding: 0.1rem;
 }
 
 #header-container {

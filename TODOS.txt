@@ -1,4 +1,3 @@
-Add a switch for concise vs. full mode
 Add note on dates that displays whether job / project is ongoing / current.
 Add hover text or tooltip over date that gives specifics
 Emphasize position more than organization in companies

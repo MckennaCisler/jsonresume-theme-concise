@@ -18,14 +18,20 @@
 	<title>{{#resume.basics}}{{name}}{{/resume.basics}}</title>
 
 	<style>
-	{{{normalizeCss}}}
-	{{{css}}}
+		{{{normalizeCss}}}
+		{{{css}}}
 	</style>
 
 	</head>
 	<body>
 
 	<div class=".container-fluid">
+		<div class="concise-full-switch">
+			<a href="#" id="concise-activate" title="Hide detailed information until hovered over">Concise</a>
+			|
+			<a href="#" id="full-activate" title="Show all information">Full</a>
+		</div>
+
 		<div id="header-container" class="col-xs-10 col-lg-7">
 			<div id="header">
 				{{> header}}
@@ -54,10 +60,15 @@
 
 	<script>
 		// set to true to remove all interactivity and just display all info
-		var SHOW_FULL_SECTION = false;
+		var SHOW_FULL_SECTIONS = false;
 
 		// how long a user must hover over a summary before it expands
 		var HOVER_ACTIVATE_TIME = 600; // ms
+
+		// for dynamic changing of showing everything
+		var full_mode = true;
+
+		var hinter_removed = false;
 
 		var otherSlidingDownTimeout = null;
 		revealSection = function(activateTimeout) {
@@ -96,20 +107,34 @@
 			otherSlidingDownTimeout = null;
 		}
 
-		if (!SHOW_FULL_SECTION) {
-			// add a hinter to the dropdown function that disappears on first parent hover
-			$(".section-container").not(".no-hinter-section").first()
-				.append("<span class='summary-section-dropdown-hinter'>\uf107</span>")
+		set_full_mode = function() {
+			$("#full-activate").css("text-decoration", "underline");
+			$("#concise-activate").css("text-decoration", "none");
+
+			// disable handlers and show everything
+			$(".section-container").off("mouseenter mouseleave");
+			$(".section-container").off("blur");
+			$(".section-container").off("click");
+
+			$(".summary-section-dropdown-hinter").hide();
+			$(".full-section").show();
+			$(".summary-section").show();
+		}
+
+		set_concise_mode = function() {
+			$("#concise-activate").css("text-decoration", "underline");
+			$("#full-activate").css("text-decoration", "none");
+
+			// make sure to re-show and re-activate hover option on hinter
+			// (never show again once removed; i.e. hovered over once)
+			$(".summary-section-dropdown-hinter").show();
+			if (!hinter_removed) {
+				$(".section-container").not(".no-hinter-section").first()
 				.hover(() => {
+					hinter_removed = true;
 					$(".summary-section-dropdown-hinter").remove();
 				});
-
-			// instead of being empty, put in \uf107 if we want to always show indicators
-			$(".section-container").append(
-				"<span class='summary-section-dropdown-indicator'></span>");
-
-			$(".full-section").hide();
-			$(".summary-section").show();
+			}
 
 			// desktop reveal method
 			$(".section-container").hover(function() {
@@ -128,7 +153,30 @@
 				revealSection.apply(this, [0]);
 			});
 
+			$(".full-section").hide();
+			$(".summary-section").show();
+		}
+
+		if (!SHOW_FULL_SECTIONS) {
+			// toggle handlers
+			$("#concise-activate").click(set_concise_mode);
+			$("#full-activate").click(set_full_mode);
+
+			// add a hinter to the dropdown function that disappears on first parent hover
+			$(".section-container").not(".no-hinter-section").first()
+			.append("<span class='summary-section-dropdown-hinter'>\uf107</span>")
+
+			// instead of being empty, put in \uf107 if we want to always show indicators
+			$(".section-container").append(
+				"<span class='summary-section-dropdown-indicator'></span>");
+
+			$(".full-section").hide();
+			$(".summary-section").show();
+
+			// set concise by default
+			set_concise_mode()
 		} else {
+			$(".concise-full-switch").hide();
 			$(".full-section").show();
 			$(".summary-section").show();
 		}
