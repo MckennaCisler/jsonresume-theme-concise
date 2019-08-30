@@ -75,9 +75,6 @@ blockquote {
 	padding: 0.25em;
 	margin: 0.5em;
 	margin-bottom: 1em;
-	border-left-style: solid;
-	border-color: rgba(170, 170, 170, 0); /* #aaa0 */
-	border-width: 1px;
 }
 
 .section-container-hover {
@@ -86,10 +83,11 @@ blockquote {
 
 .summary-section-dropdown-indicator {
 	font-family: FontAwesome;
-	top: -0.25rem;
+	font-size: 1.3rem;
+	top: -0.5rem;
 	position: relative;
 	left: 50%;
-	margin-left: -0.5rem;
+	margin-left: -0.6rem; /* 1/2 of font-size */
 	display: block;
 	width: 0;
 	height: 0;
@@ -109,10 +107,10 @@ blockquote {
 
 .summary-section-dropdown-hinter {
 	font-family: FontAwesome;
-	top: -0.25rem;
+	font-size: 1.3rem;
+	top: -0.5rem;
 	position: relative;
 	left: 50%;
-	font-size: 1.2rem;
 	margin-left: -0.6rem; /* 1/2 of font-size */
 	display: block;
 	width: 0;
@@ -184,8 +182,6 @@ blockquote {
 #location {
 	float: right;
 	text-align: right;
-	border-left-style: none;
-	border-right-style: solid;
 }
 #contact, #location {
 	margin: 0;
@@ -252,8 +248,6 @@ blockquote {
 		text-align: center;
 		margin: 0;
 		margin-bottom: 0.25rem;
-		border-left-style: solid;
-		border-right-style: none;
 	}
 
 	#skills .item {
