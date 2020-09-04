@@ -31,12 +31,13 @@ Handlebars.registerHelper('projectTypeIcon', function(type) {
 		case "talk": return "fa-signing"
 		case "application": return "fa-code"
 		case "conference": return "fa-building"
+		case "hardware": return "fa-cogs"
 	}
 });
 
 Handlebars.registerHelper('absoluteUrl', function(url) {
 	if (url.search("^http\:\/\/") != -1) {
-  	return url;
+		return url;
 	} else if (url.search("^https\:\/\/") != -1) {
 		return url;
 	} else {
@@ -53,18 +54,28 @@ Handlebars.registerHelper('durationOf', function(date) {
 
 	// treat the MS difference as off the epoch and get deltas from that
 	const duration = new Date(endDate - new Date(date.startDate));
-	const yrs = duration.getFullYear() - 1970;
+	let yrs = duration.getFullYear() - 1970;
+	let months = duration.getMonth();
+	let days = duration.getDate();
 
-	if (yrs <= 0) {
-		const months = duration.getMonth();
-
+	if (yrs < 0) {
+		return "0 days";
+	} else if (yrs == 0) {
 		if (months <= 0) {
-			let days = duration.getDate()
+			if (days == 0) {
+				days = 1;
+			}
 			return days + " day" + (days == 1 ? "" : "s");
 		} else {
+			if (days >= 14) {
+				months++;
+			}
 			return months + " month" + (months == 1 ? "" : "s");
 		}
 	} else {
+		if (months >= 6) {
+			yrs++;
+		}
 		return yrs + " year" + (yrs == 1 ? "" : "s");
 	}
 });
@@ -78,7 +89,7 @@ Handlebars.registerHelper('shortDate', function(date) {
 Handlebars.registerHelper('niceDate', function(date) {
 	// ex. Mon May 12 2017
 	let dateInfo = new Date(date).toDateString().split(" ");
-	return `${dateInfo[1]} ${dateInfo[2]} ${dateInfo[3]}`;
+	return `${dateInfo[1]} ${Number(dateInfo[2])+1} ${dateInfo[3]}`; // fixing bug with off-by-one day of month...
 });
 
 function render(resume) {
